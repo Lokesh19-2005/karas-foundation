@@ -1,17 +1,18 @@
 /* ============================================
    KARAS FOUNDATION - Counter Animation
+   IntersectionObserver + requestAnimationFrame
    ============================================ */
 
 function animateCounters() {
-    const counters = document.querySelectorAll('.counter-number');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
+    var counters = document.querySelectorAll('.counter-number');
 
-        const updateCounter = () => {
+    counters.forEach(function (counter) {
+        var target = parseInt(counter.getAttribute('data-target'), 10);
+        var duration = 2000;
+        var step = target / (duration / 16);
+        var current = 0;
+
+        function updateCounter() {
             current += step;
             if (current < target) {
                 counter.textContent = Math.ceil(current);
@@ -19,21 +20,20 @@ function animateCounters() {
             } else {
                 counter.textContent = target;
             }
-        };
+        }
 
         updateCounter();
     });
 }
 
-// Intersection Observer for counters
 function initCounterObserver() {
-    const counterSection = document.querySelector('.counter-section');
+    var counterSection = document.querySelector('.counter-section');
     if (!counterSection) return;
 
-    let animated = false;
+    var animated = false;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting && !animated) {
                 animated = true;
                 animateCounters();

@@ -1,59 +1,80 @@
 /* ============================================
    KARAS FOUNDATION - Main JavaScript
+   Optimized: rAF scroll handler, debounced events
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    'use strict';
 
-    // Navbar Scroll Effect
+    // ============ AOS INIT ============
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
+
+    // ============ DOM REFERENCES ============
     const navbar = document.getElementById('mainNavbar');
     const scrollProgress = document.getElementById('scrollProgress');
     const backToTop = document.getElementById('backToTop');
 
-    window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollY / docHeight) * 100;
+    // ============ SCROLL HANDLER (rAF optimized) ============
+    let ticking = false;
 
-        // Navbar background
-        if (scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
 
-        // Scroll progress bar
-        if (scrollProgress) {
-            scrollProgress.style.width = scrollPercent + '%';
-        }
+        requestAnimationFrame(function () {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
 
-        // Back to top button
-        if (backToTop) {
-            if (scrollY > 400) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
+            // Navbar background toggle
+            if (navbar) {
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             }
-        }
-    });
 
-    // Back to Top Click
+            // Scroll progress bar
+            if (scrollProgress) {
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+
+            // Back to top visibility
+            if (backToTop) {
+                if (scrollY > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+
+            ticking = false;
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ============ BACK TO TOP ============
     if (backToTop) {
-        backToTop.addEventListener('click', function() {
+        backToTop.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
+    // ============ SMOOTH SCROLL FOR ANCHORS ============
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            var href = this.getAttribute('href');
+            if (href === '#') return;
+            var target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
