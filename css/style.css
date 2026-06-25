@@ -204,20 +204,21 @@ img { max-width: 100%; height: auto; }
     background: url('https://images.unsplash.com/photo-1613899370095-f2b9ef807bf3?w=1920&q=90') center/cover no-repeat;
     display: flex;
     align-items: center;
+    padding-top: 100px;
 }
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(160deg, 
-        rgba(255,255,255,0.92) 0%, 
-        rgba(255,255,255,0.85) 40%, 
-        rgba(11,110,105,0.15) 100%);
+        rgba(255,255,255,0.94) 0%, 
+        rgba(255,255,255,0.88) 40%, 
+        rgba(242,106,61,0.08) 100%);
 }
 .hero-content { position: relative; z-index: 2; }
 
 /* Hero Brand Typography */
 .hero-brand {
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 800;
     color: #0B6E69;
     letter-spacing: 3px;
@@ -249,7 +250,7 @@ img { max-width: 100%; height: auto; }
 
 /* Buttons - Orange Primary */
 .btn-primary-custom {
-    background: var(--secondary);
+    background: #F26A3D;
     color: var(--white);
     padding: 14px 34px;
     border-radius: 50px;
@@ -260,7 +261,7 @@ img { max-width: 100%; height: auto; }
     transition: var(--transition);
 }
 .btn-primary-custom:hover {
-    background: var(--secondary-dark);
+    background: #d9582e;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(242, 106, 61, 0.35);
     color: var(--white);
@@ -269,18 +270,18 @@ img { max-width: 100%; height: auto; }
 /* Buttons - Green Outline */
 .btn-outline-custom {
     background: var(--white);
-    color: var(--primary);
+    color: #0B6E69;
     padding: 14px 34px;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 2px solid var(--primary);
+    border: 2px solid #0B6E69;
     transition: var(--transition);
 }
 .btn-outline-custom:hover {
-    background: var(--primary);
+    background: #0B6E69;
     color: var(--white);
-    border-color: var(--primary);
+    border-color: #0B6E69;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(11, 110, 105, 0.25);
 }
