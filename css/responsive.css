@@ -37,12 +37,14 @@
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active {
         color: var(--primary) !important;
-        background: rgba(11,110,105,0.05) !important;
+        background: rgba(242,106,61,0.05) !important;
     }
     .navbar-nav .ms-lg-3 { margin-top: 10px; margin-left: 0 !important; }
     .btn-donate { display: block; text-align: center; width: 100%; }
-    .nav-logo { height: 44px; }
+    .nav-logo { height: 42px; }
+    .brand-name { font-size: 1.1rem; }
     .brand-tagline { display: none; }
+    .navbar-brand { max-width: 55%; gap: 8px; }
     .org-level.org-three { flex-direction: column; align-items: center; }
 }
 
@@ -69,7 +71,9 @@
     .vm-card { padding: 25px; }
     .focus-card { padding: 25px 18px; }
     .contact-form-wrapper { padding: 22px; }
-    .nav-logo { height: 40px; }
+    .nav-logo { height: 38px; }
+    .brand-name { font-size: 1rem; }
+    .navbar-brand { max-width: 50%; }
 }
 
 @media (max-width: 480px) {
@@ -80,5 +84,7 @@
     .org-level { flex-direction: column; align-items: center; }
     .counter-number { font-size: 1.8rem; }
     .counter-icon { font-size: 2rem; }
-    .nav-logo { height: 36px; }
+    .nav-logo { height: 34px; }
+    .brand-name { font-size: 0.9rem; }
+    .navbar-brand { max-width: 50%; gap: 6px; }
 }
