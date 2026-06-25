@@ -496,14 +496,15 @@ img { max-width: 100%; height: auto; }
 .back-to-top {
     position: fixed; bottom: 30px; right: 30px;
     width: 48px; height: 48px; border-radius: 50%;
-    background: var(--primary); color: var(--white);
+    background: #F26A3D; color: var(--white);
     border: none; cursor: pointer; font-size: 1.1rem;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 16px rgba(11,110,105,0.3);
-    opacity: 0; visibility: hidden; transition: var(--transition); z-index: 999;
+    box-shadow: 0 4px 16px rgba(242,106,61,0.35);
+    opacity: 0; visibility: hidden; transition: var(--transition); 
+    z-index: 9998;
 }
 .back-to-top.visible { opacity: 1; visibility: visible; }
-.back-to-top:hover { transform: translateY(-4px); background: var(--secondary); }
+.back-to-top:hover { transform: translateY(-4px); background: #d9582e; }
 
 /* ============ PAGE HERO (INNER PAGES) ============ */
 .page-hero {
