@@ -97,7 +97,7 @@ img { max-width: 100%; height: auto; }
 
 /* Navigation */
 .navbar {
-    padding: 18px 0;
+    padding: 10px 0;
     transition: var(--transition);
     background: transparent;
 }
@@ -107,7 +107,7 @@ img { max-width: 100%; height: auto; }
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-    padding: 10px 0;
+    padding: 6px 0;
 }
 
 .navbar-brand {
@@ -117,7 +117,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .nav-logo {
-    height: 44px;
+    height: 80px;
     width: auto;
     border-radius: 8px;
     object-fit: contain;
