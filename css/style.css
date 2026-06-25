@@ -5,23 +5,23 @@
 
 /* CSS Variables */
 :root {
-    --primary: #0B6E69;
-    --primary-dark: #095955;
-    --secondary: #F26A3D;
-    --secondary-dark: #d9582e;
+    --primary: #F26A3D;
+    --primary-dark: #d9582e;
+    --secondary: #0B6E69;
+    --secondary-dark: #095955;
     --accent: #FFC247;
     --dark: #1B1B1B;
     --dark-gray: #3a3a3a;
     --background: #FFFFFF;
-    --background-soft: #f9fcfb;
+    --background-soft: #fffbf9;
     --white: #FFFFFF;
-    --gray-100: #f5f7f6;
-    --gray-200: #e8edeb;
-    --gray-300: #d1dad7;
-    --gray-600: #6b7c78;
-    --shadow: 0 4px 20px rgba(11, 110, 105, 0.06);
-    --shadow-md: 0 8px 30px rgba(11, 110, 105, 0.08);
-    --shadow-lg: 0 16px 50px rgba(11, 110, 105, 0.1);
+    --gray-100: #f7f5f4;
+    --gray-200: #eceae8;
+    --gray-300: #dad6d3;
+    --gray-600: #7c7269;
+    --shadow: 0 4px 20px rgba(242, 106, 61, 0.05);
+    --shadow-md: 0 8px 30px rgba(242, 106, 61, 0.07);
+    --shadow-lg: 0 16px 50px rgba(242, 106, 61, 0.1);
     --radius: 16px;
     --radius-sm: 10px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,7 +139,7 @@ img { max-width: 100%; height: auto; }
     max-width: 200px;
     transition: var(--transition);
 }
-.navbar.scrolled .brand-name { color: var(--primary); }
+.navbar.scrolled .brand-name { color: #0B6E69; }
 .navbar.scrolled .brand-tagline { color: var(--gray-600); }
 
 .navbar-nav .nav-link {
@@ -211,7 +211,7 @@ img { max-width: 100%; height: auto; }
 .hero-brand {
     font-size: 5rem;
     font-weight: 800;
-    color: var(--primary);
+    color: #0B6E69;
     letter-spacing: 3px;
     margin-bottom: 8px;
     line-height: 1;
@@ -424,7 +424,7 @@ img { max-width: 100%; height: auto; }
 }
 .counter-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(11,110,105,0.92), rgba(11,110,105,0.88));
+    background: linear-gradient(160deg, rgba(242,106,61,0.92), rgba(242,106,61,0.88));
 }
 .counter-item { color: var(--white); padding: 25px; }
 .counter-icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
@@ -453,7 +453,7 @@ img { max-width: 100%; height: auto; }
 .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 .footer-logo-img { height: 44px; border-radius: 8px; }
 .footer-brand-info { display: flex; flex-direction: column; }
-.footer-brand-name { font-size: 1.3rem; font-weight: 800; color: var(--white); letter-spacing: 1px; }
+.footer-brand-name { font-size: 1.3rem; font-weight: 800; color: #0B6E69; letter-spacing: 1px; }
 .footer-brand-tagline { font-size: 0.65rem; color: rgba(255,255,255,0.5); letter-spacing: 0.3px; max-width: 180px; }
 .footer-about p { font-size: 0.88rem; line-height: 1.8; color: rgba(255,255,255,0.6); }
 .footer-social { display: flex; gap: 10px; margin-top: 22px; }
@@ -506,7 +506,7 @@ img { max-width: 100%; height: auto; }
 .page-hero-contact { background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=85'); }
 .page-hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(11,110,105,0.9), rgba(11,110,105,0.85));
+    background: linear-gradient(160deg, rgba(242,106,61,0.88), rgba(242,106,61,0.82));
 }
 .page-hero-content { position: relative; z-index: 2; text-align: center; }
 .page-hero-content h1 { font-size: 2.8rem; color: var(--white); margin-bottom: 10px; }
