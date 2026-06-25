@@ -179,7 +179,7 @@ img { max-width: 100%; height: auto; }
 .hero-section {
     position: relative;
     min-height: 100vh;
-    background: url('https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=1920&q=85') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1497375638960-ca368c7231e4?w=1920&q=90&auto=format') center/cover no-repeat;
     display: flex;
     align-items: center;
 }
