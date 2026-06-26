@@ -1314,3 +1314,14 @@ img { max-width: 100%; height: auto; }
 
 .newsletter-form .form-control { border: none; padding: 14px var(--space-3); }
 .newsletter-form .btn { border-radius: 0 50px 50px 0 !important; padding: 14px var(--space-4); }
+
+
+/* ============ SECTION IMAGES ============ */
+.section-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
